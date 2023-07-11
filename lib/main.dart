@@ -110,6 +110,8 @@ class _EnteriesState extends State<Enteries> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               const Text("Categories"),
+
+                              //hiii
                               Text(snapshot.data!.entries![index].category??""),
                             ],
                           )
