@@ -1,9 +1,9 @@
-import 'dart:convert';
+// import 'dart:convert';
 
 import 'package:enteries_apitask/provider/entries_provider.dart';
 import 'package:enteries_apitask/service/api_function.dart';
 import 'package:flutter/material.dart';
-import "package:http/http.dart"as http;
+// import "package:http/http.dart"as http;
 import 'package:provider/provider.dart';
 
 import 'model/entries_api/entries_api.dart';
@@ -16,10 +16,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context)=>EntriesProvider()),
-      ],
+    return ChangeNotifierProvider(
+      create: (context) => EntriesProvider(),
+     
       child: const MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'API Details',

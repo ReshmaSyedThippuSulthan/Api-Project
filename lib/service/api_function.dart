@@ -3,12 +3,17 @@ import 'package:http/http.dart'as http;
 import 'dart:convert';
 
 class ApiService{
-static Future<EntriesApi> getEnteries()async{
+static Future<EntriesApi?> getEnteries()async{
     var response =await http.get(Uri.parse("https://api.publicapis.org/entries"));
-
-    final Map<String,dynamic> data=jsonDecode(response.body);
-    print(data.runtimeType);
-    EntriesApi api =EntriesApi.fromMap(data);
-    return api;
+    print(response.statusCode);
+    if(response.statusCode == 200){
+      final Map<String,dynamic> data=jsonDecode(response.body);
+      EntriesApi api =EntriesApi.fromMap(data);
+       return api;
+    }
+    
+   return null;
+    
+   
   }
   }

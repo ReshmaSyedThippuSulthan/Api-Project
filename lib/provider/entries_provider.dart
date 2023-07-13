@@ -15,6 +15,7 @@ class EntriesProvider with ChangeNotifier{
         notifyListeners();
       }
     }
-
+  
 
 }
+
